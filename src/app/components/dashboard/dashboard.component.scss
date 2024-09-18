@@ -1,0 +1,90 @@
+
+.large-card {
+  height: 100%;
+  width: 50%;  
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;  
+  box-sizing: border-box;
+}
+
+button {
+  margin-top: 1rem;
+}
+
+.preview-image {
+  max-width: 100%;
+  height: auto;
+  margin-top: 1rem;
+}
+
+
+.list-item {
+  padding: 1rem 0;
+  border-bottom: 1px solid #ccc;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 1.5rem;
+}
+
+img {
+  max-width: 100px;
+  height: auto;
+  display: block;
+  margin-top: 0.5rem;
+}
+
+/* CSS para el contenedor de la cuadrícula del dashboard */
+.grid-container {
+  padding: 20px;
+  background-color: #eaf0e0; /* Fondo verde muy claro */
+}
+
+/* Estilos para el encabezado */
+.mat-card-header {
+  background-color: #006400; /* Verde más oscuro para el header de las cards */
+  color: white;
+}
+
+/* Estilos para el contenido de la card */
+.dashboard-card-content {
+  background-color: #f0f8f0; /* Fondo blanco-verde claro */
+}
+
+/* Estilo para los botones dentro de la card */
+.mat-button {
+  background-color: #007a00; /* Verde medio para los botones */
+  color: white;
+}
+
+.mat-button:hover {
+  background-color: #005700; /* Verde más oscuro en hover */
+}
+
+/* Estilo para la imagen de vista previa */
+.preview-image {
+  max-width: 100%;
+  max-height: 150px;
+  object-fit: cover;
+}
+
+/* Estilo para la lista de items */
+.list-item {
+  border-bottom: 1px solid #c1e1c1; /* Línea verde clara debajo de cada item */
+  padding: 10px 0;
+}

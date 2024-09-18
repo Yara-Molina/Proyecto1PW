@@ -1,0 +1,10 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <label for="name">Nombre:</label>
+  <input id="name" formControlName="name" placeholder="Nombre" />
+
+  <label for="description">Descripción:</label>
+  <input id="description" formControlName="description" placeholder="Descripción" />
+
+  
+  <button type="submit" (clicl)="openDialog()">Guardar</button>
+</form>

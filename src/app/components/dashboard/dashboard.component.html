@@ -1,0 +1,50 @@
+<div class="grid-container">
+  <h1 class="mat-h1">Amphibios</h1>
+  <mat-grid-list cols="1" rowHeight="600px">
+    <!-- Formulario -->
+    <mat-grid-tile>
+      <mat-card class="dashboard-card large-card">
+        <mat-card-header>
+          <mat-card-title>Agrega un amphibio nuevo:</mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="dashboard-card-content">
+          <form [formGroup]="form" (ngSubmit)="onSubmit()">
+            <div formArrayName="items">
+              <div *ngFor="let item of items.controls; let i = index" [formGroupName]="i">
+                <div>
+                  <input type="text" formControlName="name" placeholder="Titulo" />
+                </div>
+                <div>
+                  <input type="text" formControlName="description" placeholder="Comentario" />
+                </div>
+                <div>
+                  <input type="file" (change)="onImageSelected($event, i)" />
+                </div>
+                <img *ngIf="item.value.image" [src]="item.value.image" alt="Imagen del item" class="preview-image" />
+                <button mat-button color="primary" type="button" (click)="saveItem(i)">Guardar</button>
+              </div>
+            </div>
+            <button mat-button color="primary" type="button" (click)="addItem()">Agregar amphibio</button>
+          </form>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-card class="dashboard-card large-card">
+        <mat-card-header>
+          <mat-card-title>Amphibios agredados:</mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="dashboard-card-content">
+          <ul>
+            <li *ngFor="let frog of savedFrogs; let i = index" class="list-item">
+              <p><strong>{{ frog.name }}</strong></p>
+              <p>{{ frog.description }}</p>
+              <img *ngIf="frog.items.length > 0" [src]="frog.items[0]?.image" alt="Imagen del item" class="preview-image" />
+              <button mat-button color="warn" type="button" (click)="removeFrog(i)">Eliminar</button>
+            </li>
+          </ul>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
